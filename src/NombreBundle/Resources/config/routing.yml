@@ -1,0 +1,16 @@
+nombre_homepage:
+    path:     /
+    defaults: { _controller: NombreBundle:Default:index }
+
+estudiante_delete:
+     path:     /Nombre/eliminar
+     defaults: { _controller: NombreBundle:Default:EliminarEstudiante }
+
+estudiante_insert:
+     path:     /Nombre/insertar
+     defaults: { _controller: NombreBundle:Default:InsertarEstudiante }
+    
+estudiante_update:
+     path:     /Nombre/Actualizar
+     defaults: { _controller: NombreBundle:Default:ActualizarEstudiante }
+

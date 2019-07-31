@@ -1,0 +1,62 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col s12 m8 offset-m2">
+            <div class="card">
+                <a id="add-record" class="btn-floating btn-large waves-effect waves-light right ">
+                   <i class="material-icons">add</i> 
+                </a>
+                <div class="card-content">
+                    <span class="card-title" align="center">Estudiantes</span>
+                    <table id="estu" class="highlight border datatable">
+                        <thead>
+                            <tr><th>No Control</th><th>Nombre</th><th>Edad</th><th></th></tr>
+                        </thead>
+                        <tbody>
+                            <tr id="10"><td>16980598</td><td>Marco Velazquez PQ</td><td>21</td></tr>
+                            <tr id="10"><td>16980599</td><td>Juanito Malone</td><td>21</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+   <!--F o r m u l a r i o        M o d a l-->
+   <div class="modal" id="modalReg">
+        <div class="modal-content">
+            <h4 align="center">Nuevo Estudiante</h4>
+            <br>
+            <form method="post" id="frmEstu">
+                <div class="row">
+                    <div class="input-field s12">
+                        <input type="text" id="pk" name="pk">
+                        <input type="text" id="no" name="no" class="validate">
+                        <label for="no">Numero de control:</label>
+                    </div>
+                    <div class="input-field s12">
+                        <input type="text" id="nom" name="nom" class="validate">
+                        <label for="nom">Nombre:</label>
+                    </div>
+                    <div class="input-field s12">
+                        <input type="text" id="eda" name="eda" class="validate">
+                        <label for="eda">Edad:</label>
+                    </div>
+                </div>
+            </form>
+            <div class="modal-footer">
+                <a id="guardar" class="modal-action waves-effect waves-green btn-flat" >Guardar</a>
+            </div>
+        </div>
+   </div>
+{% endblock %}
+
+{% block javascript %}
+    {{ parent() }}
+   <script type="text/javascript" src="{{ asset('js/jquery.validate.min.js') }}"></script> 
+   <script type="text/javascript" src="{{ asset('/resources/estudianteBundle/js/estudiante.js') }}"></script>
+{% endblock %}

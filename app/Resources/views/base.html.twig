@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}SIIP{% endblock %}</title>
+        {% block stylesheets %}
+            <!--Los assets son los archivos incluídos en las templates para complementar 
+            la presentación, como hojas de estilo, JavaScript o imágenes -->
+            <link type="text/css" rel="stylesheet" href="{{ asset('css/materialize.min.css') }}" media="screen,projection"/>
+            <link type="text/css" rel="stylesheet" href="{{ asset('css/dataTables.materialize.css') }}"/>
+            <link type="text/css" rel="stylesheet" href="{{ asset('css/default.css') }}"/>
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+         <nav>
+             <!-- Código del navbar de materilize -->
+            <div class="nav-wrapper pink">
+              <a href="#" class="brand-logo">Logo</a>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="sass.html">Sass</a></li>
+                <li><a href="badges.html">Components</a></li>
+                <li><a href="#">Cerrar Sesion</a></li>
+              </ul>
+            </div>
+         </nav>
+        {% block body %}{% endblock %}
+        {% block javascripts %}
+            <script type="text/javascript" src="{{ asset('js/jquery-3.0.0.min.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('js/materialize.min.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('js/dataTables.materialize.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>

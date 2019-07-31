@@ -1,0 +1,5 @@
+estudiante:
+    path:     /
+    defaults: { _controller: estudianteBundle:Default:index }
+
+  
